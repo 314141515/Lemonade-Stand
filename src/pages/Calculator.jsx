@@ -41,24 +41,30 @@ return (
       </div>
 
       
-      <div className="fade-up bg-white border-[2.5px] border-[#1a1a1a] rounded-2xl px-12 py-8 text-center w-full max-w-sm shadow-[6px_6px_0px_#1a1a1a] mb-7" style={{ animationDelay: "0.15s" }}>
-        <p className="text-xs tracking-[0.15em] text-[#999] mb-2 uppercase">
-          Nuværende Profit
-        </p>
-        <p className={`font-serif text-7xl font-black leading-none mb-4 transition-colors duration-300 ${profit >= 0 ? "text-[#1a1a1a]" : "text-[#cc2200]"} ${isPopping ? "pop" : ""}`}>
-          {profit >= 0 ? "+" : ""}${profit}
-        </p>
-        <div className="h-1.5 bg-[#f0f0f0] rounded-full overflow-hidden">
-          <div
-            className="h-full rounded-full transition-all duration-400"
-            style={{
-              width: `${Math.min(Math.abs(profit) * 2, 100)}%`,
-              background: profit >= 0 ? "#ffc800" : "#cc2200",
-              minWidth: "4px",
-            }}
-          />
+        <div 
+          className="fade-up border-[2.5px] border-[#1a1a1a] rounded-2xl px-12 py-8 text-center w-full max-w-sm shadow-[6px_6px_0px_#1a1a1a] mb-7 transition-colors duration-500"
+style={{ 
+  animationDelay: "0.15s",
+  background: profit > 0 ? "#e8fce0" : profit < 0 ? "#fce0e0" : "#ffffff"
+}}
+        >
+          <p className="text-xs tracking-[0.15em] text-[#999] mb-2 uppercase">
+            Nuværende Profit
+          </p>
+          <p className={`font-serif text-7xl font-black leading-none mb-4 transition-colors duration-300 ${profit >= 0 ? "text-[#1a1a1a]" : "text-[#cc2200]"} ${isPopping ? "pop" : ""}`}>
+            {profit >= 0 ? "+" : ""}${profit}
+          </p>
+          <div className="h-1.5 bg-[#f0f0f0] rounded-full overflow-hidden">
+            <div
+              className="h-full rounded-full transition-all duration-400"
+              style={{
+                width: `${Math.min(Math.abs(profit) * 2, 100)}%`,
+                background: profit >= 0 ? "#ffc800" : "#cc2200",
+                minWidth: "4px",
+              }}
+            />
+          </div>
         </div>
-      </div>
 
       
       <div className="flex gap-4 w-full max-w-sm mb-6 flex-wrap fade-up" style={{ animationDelay: "0.3s" }}>

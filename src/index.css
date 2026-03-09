@@ -159,3 +159,11 @@ html, body {
 .animate-float {
   animation: float 2.6s ease-in-out infinite;
 }
+
+.profit-positive {
+  background-color: #f0fff4;
+}
+
+.profit-negative {
+  background-color: #fff0f0;
+}
