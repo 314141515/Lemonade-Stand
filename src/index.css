@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./fonts/PlayfairDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('./fonts/DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('./fonts/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+:root {
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Playfair Display', serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.bg-lemon {
+  background: linear-gradient(145deg, #fffbea 0%, #fff8d6 50%, #fffef5 100%);
+}
+
+.btn-sell:hover {
+  background: #e8c000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,200,0,0.4);
+}
+
+.btn-sell:active {
+  transform: scale(0.97) translateY(0);
+}
+
+.btn-buy:hover {
+  background: #2a8c5a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34,150,90,0.35);
+}
+
+.btn-buy:active {
+  transform: scale(0.97) translateY(0);
+}
+
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: pop 0.3s ease;
+}
+
+
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 4px;
+  background: #1a1a1a;
+  border-radius: 99px;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 6px 6px 0px #1a1a1a;
+}
+
+.card-hover:hover::before {
+  transform: scaleY(1);
+}
+
+.drink-card {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.drink-card:hover {
+  transform: scale(1.05) translateY(-4px) !important;
+  box-shadow: 6px 6px 0px #1a1a1a !important;
+  z-index: 10;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.4s ease forwards;
+  will-change: transform, opacity;
+}
+
+
+.shop-card {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.shop-card:hover {
+  transform: scale(1.05) translateY(-4px) !important;
+  box-shadow: 6px 6px 0px #1a1a1a !important;
+  z-index: 10;
+}
