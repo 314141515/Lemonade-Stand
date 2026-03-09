@@ -27,7 +27,7 @@ const Shop = () => {
     <div className="flex flex-col items-center px-6 py-10">
       <h1 className="font-serif text-5xl font-black text-[#1a1a1a] mb-8 fade-up" style={{ animationDelay: "0s" }}>Shop</h1>
       
-      {/* Søgefelt */}
+
       <div className="w-full max-w-4xl mb-8 fade-up" style={{ animationDelay: "0.1s" }}>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔍</span>
@@ -41,7 +41,7 @@ const Shop = () => {
         </div>
       </div>
 
-      {/* Ingen resultater */}
+
       {filtered.length === 0 && (
         <p className="font-mono text-[#888] text-sm mt-8">Ingen drinks fundet 🍋</p>
       )}
