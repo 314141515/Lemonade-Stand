@@ -2,16 +2,25 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import Toast from "../components/Toast";
 
 const Home = () => {
   const [drinks, setDrinks] = useState([]);
   const dispatch = useDispatch();
+  const [toast, setToast] = useState(false);
 
   useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=lemon")
       .then((res) => res.json())
       .then((data) => setDrinks(data.drinks.slice(0, 4)));
   }, []);
+
+    const handleAddToCart = (drink) => {
+  dispatch(addToCart(drink));
+  setToast(true);
+  setTimeout(() => setToast(false), 2000);
+};
+
 
   return (
     <div className="flex flex-col items-center px-6 py-16 font-mono">
@@ -52,7 +61,7 @@ const Home = () => {
               <div className="flex flex-col gap-2 flex-1">
                 <p className="font-bold text-base">{drink.strDrink}</p>
                 <button
-                  onClick={() => dispatch(addToCart(drink))}
+                  onClick={() => handleAddToCart(drink)}
                   className="w-full bg-[#ffc800] border-2 border-[#1a1a1a] rounded-lg px-2 py-1 text-sm font-bold hover:bg-[#e8c000] transition-all"
                 >
                   Tilføj til kurv 🛒
@@ -68,7 +77,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-
+          {toast && <Toast message="Tilføjet til kurv! 🛒" />}
     </div>
   );
 };
