@@ -150,3 +150,12 @@ html, body {
   box-shadow: 6px 6px 0px #1a1a1a !important;
   z-index: 10;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 2.6s ease-in-out infinite;
+}

@@ -17,7 +17,7 @@ const Home = () => {
     <div className="flex flex-col items-center px-6 py-16 font-mono">
 
   
-  <span className="text-8xl mb-6 fade-up" style={{ animationDelay: "0s" }}>🍋</span>
+  <span className="text-8xl mb-6 animate-float" style={{ animationDelay: "0s" }}>🍋</span>
   <h1 className="font-serif text-6xl font-black text-[#1a1a1a] mb-3 tracking-tight text-center fade-up" style={{ animationDelay: "0.1s" }}>
     Lemonade Stand
   </h1>

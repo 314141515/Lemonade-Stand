@@ -31,7 +31,7 @@ return (
 
       
       <div className="text-center mb-8 fade-up" style={{ animationDelay: "0s" }}>
-        <span className="text-6xl inline-block">🍋</span>
+        <span className="text-8xl inline-block animate-float">🍋</span>
         <h1 className="font-serif text-5xl font-black text-[#1a1a1a] my-1 tracking-tight">
           Lemonade Stand
         </h1>
