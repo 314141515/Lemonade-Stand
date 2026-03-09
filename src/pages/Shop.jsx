@@ -1,12 +1,14 @@
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { addToCart } from "../redux/cartSlice";
+import Toast from "../components/Toast";
 
 const Shop = () => {
   const dispatch = useDispatch();
   const [drinks, setDrinks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [toast, setToast] = useState(false);
 
   useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=lemon")
@@ -16,6 +18,12 @@ const Shop = () => {
         setLoading(false);
       });
   }, []);
+
+  const handleAddToCart = (drink) => {
+  dispatch(addToCart(drink));
+  setToast(true);
+  setTimeout(() => setToast(false), 7000);
+};
 
   const filtered = drinks.filter((drink) =>
     drink.strDrink.toLowerCase().includes(search.toLowerCase())
@@ -27,7 +35,7 @@ const Shop = () => {
     <div className="flex flex-col items-center px-6 py-10">
       <h1 className="font-serif text-5xl font-black text-[#1a1a1a] mb-8 fade-up" style={{ animationDelay: "0s" }}>Shop</h1>
       
-      {/* Søgefelt */}
+
       <div className="w-full max-w-4xl mb-8 fade-up" style={{ animationDelay: "0.1s" }}>
         <div className="relative">
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔍</span>
@@ -41,7 +49,7 @@ const Shop = () => {
         </div>
       </div>
 
-      {/* Ingen resultater */}
+
       {filtered.length === 0 && (
         <p className="font-mono text-[#888] text-sm mt-8">Ingen drinks fundet 🍋</p>
       )}
@@ -54,7 +62,7 @@ const Shop = () => {
               <div className="flex flex-col gap-2 flex-1">
                 <p className="font-mono font-bold text-base">{drink.strDrink}</p>
                 <button
-                  onClick={() => dispatch(addToCart(drink))}
+                  onClick={() => handleAddToCart(drink)}
                   className="w-full bg-[#ffc800] border-2 border-[#1a1a1a] rounded-lg px-2 py-2 text-sm font-bold hover:bg-[#e8c000] transition-all"
                 >
                   Tilføj til kurv 🛒
@@ -64,6 +72,7 @@ const Shop = () => {
           </div>
         ))}
       </div>
+      {toast && <Toast message="Tilføjet til kurv! 🛒" />}
     </div>
   );
 };
