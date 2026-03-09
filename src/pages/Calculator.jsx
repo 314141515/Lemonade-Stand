@@ -29,7 +29,7 @@ const handleBuy = () => {
 return (
     <div className="w-full flex flex-col items-center px-6 py-10 font-mono">
 
-      {/* Header */}
+      
       <div className="text-center mb-8 fade-up" style={{ animationDelay: "0s" }}>
         <span className="text-6xl inline-block">🍋</span>
         <h1 className="font-serif text-5xl font-black text-[#1a1a1a] my-1 tracking-tight">
@@ -40,7 +40,7 @@ return (
         </p>
       </div>
 
-      {/* Profit Card */}
+      
       <div className="fade-up bg-white border-[2.5px] border-[#1a1a1a] rounded-2xl px-12 py-8 text-center w-full max-w-sm shadow-[6px_6px_0px_#1a1a1a] mb-7" style={{ animationDelay: "0.15s" }}>
         <p className="text-xs tracking-[0.15em] text-[#999] mb-2 uppercase">
           Nuværende Profit
@@ -60,7 +60,7 @@ return (
         </div>
       </div>
 
-      {/* Buttons */}
+      
       <div className="flex gap-4 w-full max-w-sm mb-6 flex-wrap fade-up" style={{ animationDelay: "0.3s" }}>
         <button
           onClick={handleSell}
@@ -90,7 +90,7 @@ return (
 
       
 
-      {/* Transaction History */}
+      
       {transactions.length > 0 && (
         <div className="fade-up w-full max-w-sm bg-white border-2 border-[#e8e8e8] rounded-2xl p-5" style={{ animationDelay: "0.45s" }}>
           <p className="text-xs tracking-[0.12em] uppercase text-[#aaa] mb-3">

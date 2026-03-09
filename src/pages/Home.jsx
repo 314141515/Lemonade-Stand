@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="flex flex-col items-center px-6 py-16 font-mono">
 
-  {/* Hero */}
+  
   <span className="text-8xl mb-6 fade-up" style={{ animationDelay: "0s" }}>🍋</span>
   <h1 className="font-serif text-6xl font-black text-[#1a1a1a] mb-3 tracking-tight text-center fade-up" style={{ animationDelay: "0.1s" }}>
     Lemonade Stand
@@ -25,7 +25,7 @@ const Home = () => {
     Din lille limonade-forretning
   </p>
 
-  {/* Nav knapper */}
+  
 <div className="flex gap-4 w-full max-w-4xl mb-20 flex-wrap">
   <Link to="/calculator" style={{ animationDelay: "0.3s" }} className="fade-up flex-1 min-w-[120px] bg-[#ffc800] border-2 border-[#1a1a1a] rounded-2xl px-6 py-5 shadow-[4px_4px_0px_#1a1a1a] font-bold text-center hover:bg-[#e8c000] transition-all card-hover">
     🧮 Calculator
@@ -38,10 +38,10 @@ const Home = () => {
   </Link>
 </div>
 
-      {/* Separator */}
+      
       <div className="w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-[#ccc] to-transparent mb-20" />
 
-      {/* Shop Preview */}
+      
       <div className="w-full max-w-4xl bg-[#ffc800] border-2 border-[#1a1a1a] rounded-2xl p-8 shadow-[4px_4px_0px_#1a1a1a]">
         <h2 className="font-serif text-3xl font-black text-[#1a1a1a] mb-8">Shop</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

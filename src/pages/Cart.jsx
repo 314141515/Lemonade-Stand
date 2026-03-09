@@ -33,7 +33,7 @@ const Cart = () => {
           Tilføj nogle produkter
         </p>
 
-        {/* Slideshow */}
+        
         {drinks.length > 0 && (
           <div className="fade-up w-full max-w-sm" style={{ animationDelay: "0.3s" }}>
             <div className="bg-[#ffc800] border-2 border-[#1a1a1a] rounded-2xl p-6 shadow-[4px_4px_0px_#1a1a1a]">
@@ -55,7 +55,7 @@ const Cart = () => {
                 </div>
               </div>
 
-              {/* Dots */}
+              
               <div className="flex justify-center gap-2 mt-4">
                 {drinks.map((_, i) => (
                   <button

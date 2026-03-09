@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-[#ffc800] border-b-2 border-[#1a1a1a] px-6 py-4 font-mono font-bold">
-      {/* Desktop */}
+
       <div className="flex gap-6 items-center">
         <span className="text-xl">🍋</span>
         <div className="hidden md:flex gap-6 items-center flex-1">
@@ -22,7 +22,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Burger knap - kun på mobil */}
+        
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden ml-auto flex flex-col gap-1.5 p-1"
@@ -33,7 +33,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobil menu */}
+      
       {menuOpen && (
         <div className="md:hidden flex flex-col gap-4 pt-4 border-t-2 border-[#1a1a1a] mt-4">
           <Link to="/" onClick={() => setMenuOpen(false)} className="text-[#1a1a1a]">Home</Link>
