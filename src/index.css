@@ -167,3 +167,10 @@ html, body {
 .profit-negative {
   background-color: #fff0f0;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .animate-float {
+    animation: none;
+    opacity: 1;
+  }
+}
