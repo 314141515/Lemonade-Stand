@@ -4,7 +4,7 @@ const faqs = [
   { question: "Hvad er Lemonade?", answer: "Bruh. Spørg Chatgpt" },
   { question: "Hvordan tilføjer jeg en drink til kurven?", answer: ":)." },
   { question: "Gemmer appen mine data?", answer: "Måske. Ik tænk på det." },
-  { question: "Hvad sker der når jeg resetter profitten?", answer: "Du dør ikke i hvert fald." },
+  { question: "Hvad sker der når jeg resetter profitten?", answer: "Du dør." },
 ];
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
