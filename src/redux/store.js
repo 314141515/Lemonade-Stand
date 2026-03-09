@@ -1,30 +1,31 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { combineReducers } from "@reduxjs/toolkit";
 import profitReducer from "./profitSlice";
 import cartReducer from "./cartSlice";
 
-const loadState = () => {
-  try {
-    const serialized = localStorage.getItem("lemonadeState");
-    return serialized ? JSON.parse(serialized) : undefined;
-  } catch {
-    return undefined;
-  }
+const persistConfig = {
+  key: "root",
+  storage,
 };
 
-const saveState = (state) => {
-  try {
-    localStorage.setItem("lemonadeState", JSON.stringify(state));
-  } catch {}
-};
-
-const store = configureStore({
-  reducer: {
-    profit: profitReducer,
-    cart: cartReducer,
-  },
-  preloadedState: loadState(),
+const rootReducer = combineReducers({
+  profit: profitReducer,
+  cart: cartReducer,
 });
 
-store.subscribe(() => saveState(store.getState()));
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
+
+export const persistor = persistStore(store);
 export default store;
