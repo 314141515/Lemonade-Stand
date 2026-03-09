@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const faqs = [
   { question: "Hvad er Lemonade?", answer: "Bruh. Spørg Chatgpt" },
-  { question: "Hvordan tilføjer jeg en drink til kurven?", answer: "Jamen det man gør det er at man finder en knap der gør præcis det :)." },
+  { question: "Hvordan tilføjer jeg en drink til kurven?", answer: ":)." },
   { question: "Gemmer appen mine data?", answer: "Måske. Ik tænk på det." },
   { question: "Hvad sker der når jeg resetter profitten?", answer: "Du dør ikke i hvert fald." },
 ];
